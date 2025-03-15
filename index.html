@@ -177,92 +177,196 @@
                 }
                 
                 /* Card templates */
-                .business-card {
-                    width: 100%;
-                    max-width: 400px;
-                    height: 225px;
-                    position: relative;
-                    overflow: hidden;
-                    border-radius: 0.5rem;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                }
-                
-                /* Modern template */
-                .card-modern {
-                    display: grid;
-                    grid-template-columns: 1fr 100px;
-                    color: white;
-                }
-                .card-modern .card-content {
-                    padding: 1rem;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                }
-                .card-modern .card-qr {
-                    background-color: white;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 0.5rem;
-                }
-                
-                /* Classic template */
-                .card-classic {
-                    background-color: white;
-                    color: #333;
-                    display: flex;
-                    flex-direction: column;
-                }
-                .card-classic .card-header {
-                    height: 40px;
-                    padding: 0.5rem 1rem;
-                }
-                .card-classic .card-content {
-                    display: flex;
-                    padding: 1rem;
-                }
-                .card-classic .card-details {
-                    flex: 1;
-                }
-                .card-classic .card-qr {
-                    width: 100px;
-                    padding-right: 1rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-                
-                /* Minimal template */
-                .card-minimal {
-                    background-color: white;
-                    color: #333;
-                    padding: 1.5rem;
-                    display: flex;
-                }
-                .card-minimal .card-details {
-                    flex: 1;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                }
-                .card-minimal .card-qr {
-                    width: 100px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-                .card-minimal .name {
-                    position: relative;
-                }
-                .card-minimal .name::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -0.5rem;
-                    left: 0;
-                    width: 2rem;
-                    height: 3px;
-                }
+               /* General Styles */
+.business-card {
+    width: 100%;
+    max-width: 400px;
+    height: 225px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Modern Template */
+.card-modern {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    color: white;
+    background: linear-gradient(135deg, #5D5CDE 0%, #4343C4 100%);
+}
+
+.card-modern .card-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-modern .card-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card-modern .card-content p {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.card-modern .card-qr {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.card-modern .card-qr img {
+    width: 80px;
+    height: 80px;
+}
+
+/* Classic Template */
+.card-classic {
+    background-color: white;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+}
+
+.card-classic .card-header {
+    height: 40px;
+    padding: 0.5rem 1rem;
+    background-color: #5D5CDE;
+}
+
+.card-classic .card-content {
+    display: flex;
+    padding: 1rem;
+}
+
+.card-classic .card-details {
+    flex: 1;
+}
+
+.card-classic .card-details h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #5D5CDE;
+}
+
+.card-classic .card-details p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.card-classic .card-qr {
+    width: 100px;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-classic .card-qr img {
+    width: 80px;
+    height: 80px;
+}
+
+/* Minimal Template */
+.card-minimal {
+    background-color: white;
+    color: #333;
+    padding: 1.5rem;
+    display: flex;
+    border: 1px solid #ccc;
+}
+
+.card-minimal .card-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-minimal .card-details h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    color: #5D5CDE;
+}
+
+.card-minimal .card-details h2::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #5D5CDE;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+}
+
+.card-minimal .card-details p {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.card-minimal .card-qr {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-minimal .card-qr img {
+    width: 80px;
+    height: 80px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .business-card {
+        height: auto;
+        padding: 1rem;
+    }
+
+    .card-modern {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .card-modern .card-qr {
+        justify-content: center;
+        padding: 1rem 0;
+    }
+
+    .card-classic .card-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-classic .card-qr {
+        justify-content: center;
+        padding: 1rem 0;
+    }
+
+    .card-minimal {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-minimal .card-qr {
+        justify-content: center;
+        padding-top: 1rem;
+    }
+}
             `;
             
             // Generate vCard format for QR code
